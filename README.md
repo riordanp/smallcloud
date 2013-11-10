@@ -5,7 +5,7 @@ minimal cloudapp uploade
 
 requirements
 ------------
-+ pycloud (https://github.com/originell/pycloudapp
++ pycloud (https://github.com/originell/pycloudapp)
 
 usage
 ------------

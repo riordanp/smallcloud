@@ -1,0 +1,4 @@
+smallcloud
+==========
+
+minimal cloudapp uploader

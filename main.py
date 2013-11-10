@@ -1,12 +1,17 @@
+#!/usr/bin/python2
 from cloudapp.cloud import Cloud
 from ConfigParser import SafeConfigParser
-import sys
+import argparse
+import os
 
-parser = SafeConfigParser()
-parser.read('./smallcloud.conf')
+argparser = argparse.ArgumentParser(description='Cloudapp Uploader')
+argparser.add_argument('-u', '--upload', help='Filename to upload', required=True)
+args = argparser.parse_args()
+confparser = SafeConfigParser()
+confparser.read(os.path.abspath(os.path.join(os.path.dirname(__file__), './smallcloud.conf')))
 
 mycloud = Cloud()
-mycloud.auth(parser.get('auth', 'username'), parser.get('auth', 'password'))
+mycloud.auth(confparser.get('auth', 'username'), confparser.get('auth', 'password'))
 
-print(sys.argv[1])
-mycloud.upload_file(sys.argv[1])
+print('Uploading ' + args.upload)
+mycloud.upload_file(args.upload)

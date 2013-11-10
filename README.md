@@ -9,5 +9,5 @@ requirements
 
 usage
 ------------
-Install pycloud and it's requirements, rename the '.default' part of the config file's name and edit it to reflect you Cloudapp credentials, use the program with python2 main.py <file to upload>
+Install pycloud and it's requirements, remove the '.default' part of the config file's name and edit it to reflect your Cloudapp credentials, use the program with ./main.py -u <file to upload>
 
